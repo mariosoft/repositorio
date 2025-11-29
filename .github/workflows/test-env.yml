@@ -1,0 +1,8 @@
+env:
+  ENVIRONMENT: production
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check environment
+        run: echo "Estamos en el entorno $ENVIRONMENT"
