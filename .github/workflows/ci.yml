@@ -1,4 +1,4 @@
-name: CI
+name: Build and Push
 on: [push]
 jobs:
   build:
@@ -6,5 +6,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Print a greeting
-        run: echo "¡Hola Mundo! Este es mi primer pipeline."
+      - name: Build Docker image
+        run: docker build -t my-app:${{ github.sha }} .
+      - name: Push to Docker Hub
+        run: echo "Aquí irían los comandos para push a Docker Hub"
+      - name: Deploy to Kubernetes
+        run: echo "Aquí irían los comandos para desplegar en Kubernetes"
